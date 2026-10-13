@@ -45,6 +45,9 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+      
+      - name: Compilar y ejecutar test
+        run: mvn clean test
 
       - name: Construir JAR Final
         run: mvn clean package -DskipTests
