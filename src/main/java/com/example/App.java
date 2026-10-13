@@ -6,6 +6,7 @@ package com.example;
 public class App 
 {
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         TUI tui = new TUI();
         Calculadora calculadora = new Calculadora();
         boolean ejecutando = true;

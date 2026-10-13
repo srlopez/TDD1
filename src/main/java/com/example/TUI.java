@@ -9,7 +9,6 @@ public class TUI implements AutoCloseable{
         this.scanner = new Scanner(System.in);
     }
 
-
     public int pedirEntero(String mensaje) {
         if (!mensaje.isEmpty()) {
             System.out.print(mensaje);
