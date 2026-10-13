@@ -50,7 +50,13 @@ jobs:
         run: mvn clean test
 
       - name: Construir JAR Final
-        run: mvn clean package -DskipTests
+        run: mvn clean package 
+
+      - name: Guardar la Calculadora compilada
+        uses: actions/upload-artifact@v4
+        with:
+          name: calculator-app
+          path: target/*.jar
 
       - name: Crear GitHub Release
         uses: softprops/action-gh-release@v1
