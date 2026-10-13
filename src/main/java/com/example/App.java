@@ -13,7 +13,7 @@ public class App
         while (ejecutando) {
             tui.mostrarMensaje("1. sumar dos enteros");
             tui.mostrarMensaje("2. sumar dos strings");
-            tui.mostrarMensaje("3. salir");
+            tui.mostrarMensaje("3. finalizar");
 
             int opcion = tui.pedirEntero("Seleccione una opción: ");
 

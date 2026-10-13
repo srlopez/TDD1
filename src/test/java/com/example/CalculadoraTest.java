@@ -12,6 +12,7 @@ public class CalculadoraTest {
 
     @Test
     void testSumarStrings() {
+        assertEquals("Hola Mundo", new Calculadora().sumarStrings("Hola ", "Mundo"));
 
     }
 }

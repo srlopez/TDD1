@@ -18,9 +18,4 @@ public class AppTest
         assertTrue( true );
     }
 
-    @Test
-    public void testActions()
-    {
-        assertTrue( true );
-    }
 }

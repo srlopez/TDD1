@@ -38,16 +38,18 @@ private final InputStream originalIn = System.in;
 
     @Test
     void testMostrarMensaje() {
+        @SuppressWarnings("resource")
         TUI tui = new TUI();
 
-        tui.mostrarResultado("10");
+        tui.mostrarMensaje("10");
 
-        assertTrue(outputStreamCaptor.toString().contains("--> Resultado: 10"));
+        assertTrue(outputStreamCaptor.toString().contains("10"));
     }
 
 @Test
     void testPedirEnteroValido() {
         proporcionarEntrada("42\n");
+        @SuppressWarnings("resource")
         TUI tui = new TUI();
 
         int resultado = tui.pedirEntero("Ingrese un número: ");
@@ -60,6 +62,7 @@ private final InputStream originalIn = System.in;
     void testPedirEnteroConEntradaInvalidaInicial() {
         // Simular que el usuario primero pone texto "abc" y luego el entero "15"
         proporcionarEntrada("abc\n15\n");
+        @SuppressWarnings("resource")
         TUI tui = new TUI();
 
         int resultado = tui.pedirEntero("Ingrese un número: ");
@@ -71,6 +74,7 @@ private final InputStream originalIn = System.in;
     @Test
     void testPedirTexto() {
         proporcionarEntrada("Hola Mundo\n");
+        @SuppressWarnings("resource")
         TUI tui = new TUI();
 
         String resultado = tui.pedirTexto("Ingrese texto: ");
