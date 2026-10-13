@@ -21,6 +21,6 @@ public class AppTest
     @Test
     public void testActions()
     {
-        assertTrue( true );
+        assertTrue( false );
     }
 }
