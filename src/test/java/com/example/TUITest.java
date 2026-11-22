@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TUITest {
-private final InputStream originalIn = System.in;
+    private final InputStream originalIn = System.in;
     private final PrintStream originalOut = System.out;
     private ByteArrayOutputStream outputStreamCaptor;
 
@@ -41,9 +41,9 @@ private final InputStream originalIn = System.in;
         @SuppressWarnings("resource")
         TUI tui = new TUI();
 
-        tui.mostrarMensaje("10");
+        tui.mostrarMensaje("Diez=10");
 
-        assertTrue(outputStreamCaptor.toString().contains("10"));
+        assertTrue(outputStreamCaptor.toString().contains("Diez=10"));
     }
 
 @Test
