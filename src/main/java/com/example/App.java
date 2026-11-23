@@ -12,7 +12,7 @@ public class App
         boolean ejecutando = true;
 
         while (ejecutando) {
-            tui.mostrarMensaje("MENU GENERAL");
+            tui.mostrarMensaje("MENU de OPERACIONES");
             tui.mostrarMensaje("1. sumar dos enteros");
             tui.mostrarMensaje("2. sumar dos strings");
             tui.mostrarMensaje("3. finalizar");
