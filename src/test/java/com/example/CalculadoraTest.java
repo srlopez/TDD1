@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 public class CalculadoraTest {
     @Test
     void testSumarEnteros() {
-        assertEquals(5, new Calculadora().sumarEnteros(2, 3));
+        assertEquals(5, new Calculadora().sumar(2, 3));
     }
 
     @Test
     void testSumarStrings() {
-        assertEquals("Hola Mundo", new Calculadora().sumarStrings("Hola ", "Mundo"));
+        assertEquals("Hola Mundo", new Calculadora().sumar("Hola ", "Mundo"));
 
     }
 }

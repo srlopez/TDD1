@@ -1,0 +1,10 @@
+
+mvn test
+mvn package
+mvn install
+mvn compile
+
+java -cp target/classes com.example.App
+
+mvn  compile exec:java -Dexec.mainClass="com.example.App"
+mvn  exec:java -Dexec.mainClass="com.example.App"
