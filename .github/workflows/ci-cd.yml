@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java-version: [17,21]
+        java-version: [17, 21]
 
     steps:
       - name: Checkout Código
         uses: actions/checkout@v4
 
       - name: Configurar JDK ${{ matrix.java-version }}
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
@@ -36,7 +36,7 @@ jobs:
       - name: Guardar la Calculadora compilada
         uses: actions/upload-artifact@v4
         with:
-          name: calculator-app-java${{matrix.java-version}}
+          name: calculator-app-java${{ matrix.java-version }}
           path: target/*.jar
 
   release:
@@ -44,14 +44,16 @@ jobs:
     needs: build-and-test
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        java-version: [17]
 
     steps:
       - name: Checkout Código
         uses: actions/checkout@v4
 
       - name: Configurar JDK ${{ matrix.java-version }}
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
@@ -61,8 +63,6 @@ jobs:
 
       - name: Construir JAR Final
         run: mvn clean package 
-
-
 
       - name: Crear GitHub Release
         uses: softprops/action-gh-release@v1
